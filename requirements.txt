@@ -1,0 +1,5 @@
+streamlit
+pinecone-client
+openai
+deep-translator>=1.9.1
+pinecone
