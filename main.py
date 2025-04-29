@@ -1,5 +1,5 @@
 import streamlit as st
-from pinecone 
+import pinecone 
 from openai import OpenAI
 from typing import List
 from deep_translator import GoogleTranslator
