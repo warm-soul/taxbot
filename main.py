@@ -6,9 +6,6 @@ from deep_translator import GoogleTranslator
 import time
 import math
 
-# Debug mode
-DEBUG = st.sidebar.checkbox("Debug Mode", False)
-
 # System prompt definition
 system_prompt = """You are an authoritative expert on the Gujrat Property Tax Law.
 Your responses should be:
@@ -30,10 +27,8 @@ Always structure your responses in a clear, organized manner using:
 - Bold text for important points
 - Separate sections with clear headings"""
 
-# Initialize OpenAI client
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
-# Initialize Pinecone
 pc = pinecone.Pinecone(api_key=st.secrets["PINECONE_API_KEY"])
 index = pc.Index("amcbots")
 
@@ -176,8 +171,9 @@ def generate_response(query: str, context: str, system_prompt: str):
     return final_response
 
 # Streamlit UI
-st.title("ગુજરાત કર કાયદો સહાયક")
-st.write("કર કાયદા વિશે કોઈપણ પ્રશ્ન પૂછો")
+st.title("AI-Powered Citizen Assistance and
+Information System")
+st.write("Ask any questions related to tax")
 
 # Initialize chat history
 if 'messages' not in st.session_state:
@@ -211,14 +207,3 @@ if prompt := st.chat_input("તમે શું જાણવા માંગો 
         st.markdown(response)
         st.session_state.messages.append({"role": "assistant", "content": response})
 
-# Sidebar with additional information
-with st.sidebar:
-    st.header("વિશે")
-    st.write("""
-    આ ચેટબોટ ગુજરાત કર કાયદા અને અમદાવાદ મ્યુનિસિપલ કોર્પોરેશન વિશે માહિતી પ્રદાન કરે છે.
-    """)
-    st.write("""
-    ભાષા સુવિધાઓ:
-    - તમે ગુજરાતી અથવા અંગ્રેજીમાં પ્રશ્નો પૂછી શકો છો
-    - તમને જવાબ ગુજરાતીમાં મળશે
-    """)
