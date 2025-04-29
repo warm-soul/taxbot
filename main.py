@@ -1,5 +1,5 @@
 import streamlit as st
-from pinecone import Pinecone
+from pinecone 
 from openai import OpenAI
 from typing import List
 from deep_translator import GoogleTranslator
@@ -34,7 +34,7 @@ Always structure your responses in a clear, organized manner using:
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # Initialize Pinecone
-pc = Pinecone(api_key=st.secrets["PINECONE_API_KEY"])
+pc = pinecone.Pinecone(api_key=st.secrets["PINECONE_API_KEY"])
 index = pc.Index("gujtaxlaw")
 
 def chunk_text(text: str, max_tokens: int = 3000) -> List[str]:
