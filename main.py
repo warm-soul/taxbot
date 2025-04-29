@@ -171,8 +171,7 @@ def generate_response(query: str, context: str, system_prompt: str):
     return final_response
 
 # Streamlit UI
-st.title("AI-Powered Citizen Assistance and
-Information System")
+st.title("AI-Powered Citizen Assistance and Information System")
 st.write("Ask any questions related to tax")
 
 # Initialize chat history
