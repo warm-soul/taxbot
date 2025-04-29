@@ -35,7 +35,7 @@ client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # Initialize Pinecone
 pc = pinecone.Pinecone(api_key=st.secrets["PINECONE_API_KEY"])
-index = pc.Index("gujtaxlaw")
+index = pc.Index("amcbots")
 
 def chunk_text(text: str, max_tokens: int = 3000) -> List[str]:
     """Split text into chunks of approximately max_tokens."""
